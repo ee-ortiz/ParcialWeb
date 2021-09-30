@@ -5,26 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Parcial</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
       rel="stylesheet"
-      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
   </head>
   <body>
-    <div class="container-fluid">
+    <div id="AA" class="container-fluid" style="margin-top: 15px">
+      <div class="row">
+        <div class="col-md-10">
+          <h1 style="font-family: 'Satisfy', cursive">Restaurant Longe</h1>
+          <span class="badge badge-default"></span>
+        </div>
+        <div id="ordenes" class="col-md-2">
+          <div class="row">
+            <div class="col-md-5" style="padding: 0%; text-align: right">
+              <img
+                src="imgs/carroCompras.png"
+                alt="carroCompras"
+                style="height: 4vh; width: 4vh"
+              />
+            </div>
+            <div
+              class="col-md-7 align-items-center justify-content-center"
+              style="padding-top: 5%; margin-left: 0"
+            >
+              <h6 id="carroItems">0 Items</h6>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-12">
-          <span class="badge badge-default">Restaurant &amp; Longue</span>
           <div class="card">
-            <grammarly class="cGcvT"> </grammarly>
-            <grammarly class="cGcvT"> </grammarly>
-            <grammarly class="cGcvT"> </grammarly>
-            <grammarly class="cGcvT"> </grammarly>
-            <grammarly class="cGcvT"> </grammarly>
-            <grammarly class="cGcvT"> </grammarly>
-            <h5 class="card-header"></h5>
             <div class="card-body">
               <img
                 class="card-img-top"
@@ -38,53 +59,103 @@
         </div>
       </div>
       <div class="row">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li id="b1" class="nav-item active">
-                <a class="nav-link" href="#"> Burgers </span></a
-                >
-              </li>
-              <li id="b2" class="nav-item">
-                <a class="nav-link" href="#">Tacos</a>
-              </li>
-              <li id="b3" class="nav-item">
-                <a class="nav-link" href="#">Salads</a>
-              </li>
-              <li id="b4" class="nav-item">
-                <a class="nav-link" href="#">desserts</a>
-              </li>
-              <li id="b5" class="nav-item">
-                <a class="nav-link" href="#">Drinks & Sides</a>
-              </li>
-            </ul>
-          </div>
+        <nav
+          class="navbar navbar-expand-sm bg-dark navbar-dark"
+          style="height: 8vh"
+        >
+          <ul class="navbar-nav ml-auto">
+            <li id="b0" class="nav-item">
+              <a class="nav-link">Burger</a>
+            </li>
+            <li id="b1" class="nav-item">
+              <a class="nav-link">Tacos</a>
+            </li>
+            <li id="b2" class="nav-item">
+              <a class="nav-link">Salads</a>
+            </li>
+            <li id="b3" class="nav-item">
+              <a class="nav-link">Desserts</a>
+            </li>
+            <li id="b4" class="nav-item">
+              <a class="nav-link">Drinks & Sides</a>
+            </li>
+          </ul>
         </nav>
       </div>
-      <div class="row">
-        <div id="a1" class="col-md-3"></div>
-        <div id="a2" class="col-md-3"></div>
-        <div id="a3" class="col-md-3"></div>
-        <div id="a4" class="col-md-3"></div>
+      <div id="comidas" class="row"></div>
+
+      <hr />
+
+      <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3">
+          Contact us: +57 3102105253 - info@restaurant.com - @restaurant
+        </div>
+      </footer>
+
+      <div
+        id="myModal"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Cancel the order
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure about cancelling the order?</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                id="cancelar"
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                Yes, I want to cancel the order
+              </button>
+              <button
+                id="continuar"
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                No, I want to continue adding products
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <script src="parcial.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"
     ></script>
-    <script src="parcial.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
